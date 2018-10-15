@@ -9,11 +9,10 @@
 </head>
 <body>
     <h1>Add a Wand</h1>
-    <form action="/add" method="POST" class="col-sm-7">
-        {% csrf_token %}
+    <form action="/create" class="col-sm-7">
         <div class="form-group">
             <label for="core">Core</label>
-            <select class="form-control" name="core">
+            <select class="form-control">
                 <option value="unicorn hair">unicorn hair</option>
                 <option value="phoenix feather">phoenix feather</option>
                 <option value="dragon heartstring">dragon heartstring</option>

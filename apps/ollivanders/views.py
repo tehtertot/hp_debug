@@ -6,14 +6,14 @@ def index(request):
     context = {
         "all_wands": Wand.objects.all()
     }
-    return render(request, "ollivanders/index.html", context)
+    return render(request, "ollivanders/index.html")
 
 def show_add(request):
     """ show a page with the form to add a wand"""
-    return render(request, "ollivanders/add.html")
+    return render(request, "ollivanders/show.html")
 
 def add_to_db(request):
     """ process the submission of a new wand"""
     if request.method == "POST":
-        Wand.objects.create(core=request.POST["core"], length=float(request.POST["length"]), wood=request.POST["wood"])
+        Wand.objects.create(core=request.POST["core"], length=request.POST["length"])
     return redirect("/")
